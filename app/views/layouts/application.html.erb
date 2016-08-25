@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BikeApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav id = "nav">
+  <div id ="page_links">
+      <%= link_to "Home", root_path %>
+      <%= link_to "About", page_About_path %>
+      <%= link_to "Rent", bikes_path %>
+      <%= link_to "FAQs", page_FAQs_path %>
+  </div>
+     
+  <div id = "login_links">
+    <% if user_signed_in? %>
+      <%= link_to "User Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "User Login", new_user_session_path %>
+      <%= link_to "Create User Profile", new_user_registration_path %>
+    <% end %>
+  </div>
+</nav>
+
+  <div id="main_wrapper">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </div>
+</body>
+</html>
