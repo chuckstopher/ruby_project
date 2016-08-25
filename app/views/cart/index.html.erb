@@ -1,2 +1,27 @@
-<h1>Cart#index</h1>
-<p>Find me in app/views/cart/index.html.erb</p>
+<h1>Your Cart</h1>
+
+<%= link_to 'Clear my cart', cart_clear_path %>
+
+<br><br>
+
+<% total = 0 %>
+
+<ul>
+    
+
+<% @cart.each do | id, quantity | %>
+    <% bike = Bike.find_by_id(id) %>
+    
+  <li>
+      <%= link_to bike.title%>
+      <p><%= bike.description %></p>
+      <p>Quantity: <%= quantity %></p>
+      <p>€ Unit Price: <%= number_to_currency(bike.price, :unit => '€')%> </p>
+      
+      
+  </li>
+<p><% total += quantity * bike.price %></p>
+<% end %>
+<p><b>Total Rental Cost: <%= number_to_currency(total, :unit => '€') %></b></p>
+</ul>
+

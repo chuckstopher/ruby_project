@@ -23,6 +23,7 @@
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <a href="/cart/<%=bike.id %>">Rent this Bike</a></td>
       </tr>
     <% end %>
   </tbody>
