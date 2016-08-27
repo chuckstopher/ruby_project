@@ -1,6 +1,9 @@
 <h1>Your Cart</h1>
-
+<% if @cart.empty? %>
+<p>Your Cart is empty please choose a bike to <a href= "https://rent-bike-chuckstopher.c9users.io/bikes">Rent</a></p>
+<% else %>
 <%= link_to 'Clear my cart', cart_clear_path %>
+<% end %>
 
 <br><br>
 
@@ -24,4 +27,5 @@
 <% end %>
 <p><b>Total Rental Cost: <%= number_to_currency(total, :unit => '€') %></b></p>
 </ul>
-
+<br><br><br>
+<p><a href= "https://rent-bike-chuckstopher.c9users.io/bikes">I would like to rent some more Bikes</a></p>

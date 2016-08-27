@@ -1,5 +1,7 @@
 class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
+   before_action :authenticate_user!
+  
 
   # GET /bikes
   # GET /bikes.json
@@ -72,3 +74,4 @@ class BikesController < ApplicationController
       params.require(:bike).permit(:title, :description, :image_url, :price)
     end
 end
+
