@@ -7,6 +7,7 @@ gem 'rails', '4.2.5'
 
 group :development, :test do
     gem 'sqlite3'
+  end
     
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -29,6 +30,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :production do
 gem 'pg'
 gem 'rails_12factor'
+end
 
 
 # Use ActiveModel has_secure_password
@@ -45,12 +47,13 @@ group :development, :test do
   gem 'byebug'
 end
 
-group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  
+group :development do
+ gem 'web-console'
+ end
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-end
-end
-end
+
+
