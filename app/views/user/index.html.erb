@@ -1,0 +1,28 @@
+
+<p id="notice"><%= notice %></p>
+
+<%= form_tag(user_index_path, :method => "get")do %>
+<%= text_field_tag :search, nil, :placeholder => "Search by user email" %>
+<%= submit_tag "Search" %>
+<% end %>
+<h1>List Users</h1>
+<br><br><br>
+
+<table>
+  <thead>
+    <tr>
+      <th>User Email</th>
+      <th>User ID</th>
+      <th>View Cart</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<% @users.all.each do |user,bikes,id,quantity,title, cart| %>
+   <tr>
+      <td><%= link_to user.email %></td>
+      <td> <%= link_to user.id %></td>
+      <td><a href= "https://rent-bike-chuckstopher.c9users.io/cart/<% [:id] %>">View Cart </a></td>
+    </tr>
+<% end %>
+</table>
