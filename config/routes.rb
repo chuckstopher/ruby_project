@@ -1,12 +1,35 @@
 Rails.application.routes.draw do
   
+  resources :profiles
+  resources :profiles
+  get 'user/index'
+
+  get 'user/new'
+
+  get 'user/show'
+
+  get 'user/edit'
+
+  get 'users/index'
+
+  get 'users/new'
+
+  get 'users/show'
+
+  get 'users/edit'
+
+  get 'user/login'
+
+  get 'user/rent'
+
   devise_for :admins
   devise_for :users
   get '/cart' => 'cart#index'
   get '/cart/clear' =>'cart#clearCart'
   get '/cart/:id' => 'cart#add'
+ 
   
-
+  get '/signedinuserprofile' => 'profiles#signedinuserprofile'
   resources :bikes
   root 'page#Home'
 
@@ -15,6 +38,10 @@ Rails.application.routes.draw do
   get 'page/Rent'
 
   get 'page/FAQs'
+  
+  get 'page/Contact'
+  
+  get 'page/checkout'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

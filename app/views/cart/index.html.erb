@@ -8,24 +8,24 @@
 <br><br>
 
 <% total = 0 %>
-
-<ul>
-    
-
+<% days = 0 %>
 <% @cart.each do | id, quantity | %>
     <% bike = Bike.find_by_id(id) %>
     
   <li>
-      <%= link_to bike.title%>
+      <%= link_to bike.title %>
+      <p><%= image_tag(bike.image_url, :class => 'list_image') %></p>
       <p><%= bike.description %></p>
       <p>Quantity: <%= quantity %></p>
+      <p>Days to Rent: <%= days %></p>
       <p>€ Unit Price: <%= number_to_currency(bike.price, :unit => '€')%> </p>
-      
-      
   </li>
-<p><% total += quantity * bike.price %></p>
+<p><% total += quantity * bike.price  %></p>
 <% end %>
 <p><b>Total Rental Cost: <%= number_to_currency(total, :unit => '€') %></b></p>
 </ul>
 <br><br><br>
 <p><a href= "https://rent-bike-chuckstopher.c9users.io/bikes">I would like to rent some more Bikes</a></p>
+
+<br><br><h3><strong><%= link_to "Checkout", page_checkout_path %></strong></h3></a></p>
+

@@ -7,6 +7,13 @@ class BikesController < ApplicationController
   # GET /bikes.json
   def index
     @bikes = Bike.all
+    
+    if params[:search]
+      @bikes = Bike.search(params[:search])
+      @bikes = @bikes.order("created_at ASC")
+    else
+      @bikes = @bikes.order("created_at DESC")
+    end
   end
 
   # GET /bikes/1
@@ -63,7 +70,7 @@ class BikesController < ApplicationController
     end
   end
 
-    private
+   
     # Use callbacks to share common setup or constraints between actions.
     def set_bike
       @bike = Bike.find(params[:id])

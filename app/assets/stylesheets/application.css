@@ -14,15 +14,41 @@
  *= require_self
  */
 
+
+
 *{
-    padding: 0;
+    padding-bottom:  30px;
     margin: 0;
+  
 }
+
+#map{
+    
+    width:33%;
+    margin-top: 0px;
+    padding-top: 65%;
+    position: relative;
+}
+#locate{
+    padding-top: 50px;
+    padding-bottom:5px;
+    height: 30px;
+    width: 33%;
+    float: inherit
+}
+
+#header{
+    height: 355px;
+    background-image: url(https://vfs-gce-eu-98-4.c9.io/vfs/3676558/9cafRp95dP16hQww/home/directory/bike_app/app/assets/stylesheets/Images/Cyclists.PNG?1472385429462);
+}
+
+
 #nav{
     width: 100%;
     height: 40px;
     background: #000;
     float: left;
+    
 }
 
 #page_links a{
@@ -54,4 +80,27 @@
     width: 90%;
     float: left;
     margin: 20px 5% 0 5%;
+   
+}
+
+#debit{
+    width: 50%;
+    float: left;
+    margin: 1% 5% 0 5%;
+}
+
+#guarantee{
+    width:50%;
+    float:left;
+    margin: 1% 5% 0 5%;
+}
+#afterthirty{
+    width:50%;
+    float:left;
+    margin: 1% 5% 0 5%;
+}
+#subscription{
+    width:50%;
+    float:left;
+    margin: 1% 5% 0 5%;
 }
